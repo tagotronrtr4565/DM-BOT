@@ -27,9 +27,10 @@ dmBot.on("message", (message) => {
         var args = args.slice(0).join(" ")
         var BOT_ID = dmBot.user.id
         var userID = message.author.id
-        if (message.content.startsWith(config.PREFIX)) return message.channel.send(":x: Please use commands in real server! :x:") 
+        if (message.content.startsWith(config.!)) return message.channel.send(":!: Please use commands in real server! :x:") 
         if (message.author.bot) return;
         message.channel.send("This message has been send to the staff! :incoming_envelope:").then(msg => msg.delete(3000))
+        
         if (message.content.startsWith(config.PREFIX)) return
         if (args.length > 1024) return message.reply("Your message content too many characters (1024 Limit) :/") 
         var embed = new Discord.RichEmbed()
